@@ -135,7 +135,7 @@ body {
 .circle {
     background-color: var(--color-secondary);
     border-radius: 100%;
-    padding: 0.3rem 0.4rem;
+    padding: 0.4rem;
 }
 
 .circle a{
@@ -245,11 +245,17 @@ body {
 }
 
 .preview-button {
-    display: inline-flex;
+    cursor: pointer;
     border: 2px solid #3E70DD;
     border-radius: 2rem;
-    padding: 0.1rem 1rem;
+    display: inline-flex;
     font-size: 1rem;
+    padding: 0.1rem 1rem;
+}
+
+.preview-button:hover {
+    background-color: var(--color-primary);
+    color: var(--background-color);
 }
 
 .preview-button a {
@@ -265,6 +271,7 @@ body {
     background-color: var(--color-primary);
     border: 2px solid #3E70DD;
     border-radius: 2rem;
+    cursor: pointer;
     padding: 0.1rem 1rem;
     font-size: 1rem;
     text-decoration: none;
@@ -511,5 +518,11 @@ div.project-area {
 
     footer {
         font-size: 14px;
+    }
+
+    .footer-container {
+        align-items: center;
+        flex-direction: column;
+        gap: 0.5rem;
     }
 }
