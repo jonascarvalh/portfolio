@@ -453,6 +453,13 @@ div.project-area {
     margin: var(--space-short) 0 0;
 }
 /* media queries */
+/* small screens */
+@media(max-width: 1366px){
+    .header-container {
+        padding: 12rem 0;
+    }
+}
+/* mobile */
 @media(max-width: 600px){
     .header-container h1 {
         font-size: 2.2rem;
