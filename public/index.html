@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/brands.min.css" integrity="sha512-G/T7HQJXSeNV7mKMXeJKlYNJ0jrs8RsWzYG7rVACye+qrcUhEAYKYzaa+VFy6eFzM2+/JT1Q+eqBbZFSHmJQew==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/solid.min.css" integrity="sha512-6mc0R607di/biCutMUtU9K7NtNewiGQzrvWX4bWTeqmljZdJrwYvKJtnhgR+Ryvj+NRJ8+NnnCM/biGqMe/iRA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
     <div class="container">
@@ -102,32 +103,38 @@
                 
                 <div class="divide-columns">
                     <div class="form-container poppins-medium">
-                        <form action="" class="form-contact">
+                        <form action="/send-whatsapp" method="POST" class="form-contact">
                             <div class="form-row form-2-column">
                                 <div class="form-elements">
-                                    <label for="first-name">First Name:</label>
-                                    <input type="text" id="first-name" placeholder="John" disabled>
+                                    <label for="firstname">First Name:</label>
+                                    <input type="text" name="firstname" id="firstname" placeholder="John">
                                 </div>
                                 <div class="form-elements">
-                                    <label for="last-name">Last Name:</label>
-                                    <input type="text" id="last-name" placeholder="Doe" disabled>
+                                    <label for="lastname">Last Name:</label>
+                                    <input type="text" name="lastname" id="lastname" placeholder="Doe">
                                 </div>
                                 <div class="form-elements">
-                                    <label for="first-name">Phone:</label>
-                                    <input type="text" name="phone" id="phone" placeholder="55 95555-5555" disabled>
+                                    <label for="phone">Phone:</label>
+                                    <input type="text" name="phone" id="phone" placeholder="55 95555-5555">
                                 </div>
                                 <div class="form-elements">
-                                    <label for="last-name">E-mail:</label>
-                                    <input type="email" name="email" id="email" placeholder="johndoe@example.com" disabled>
+                                    <label for="email">E-mail:</label>
+                                    <input type="email" name="email" id="email" placeholder="johndoe@example.com">
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-elements">
                                     <label for="message">Message:</label>
-                                    <textarea name="message" id="message" placeholder="Detail your message here." disabled></textarea>
+                                    <textarea name="message" id="message" placeholder="Detail your message here."></textarea>
+                                </div>
+                                <div class="success-message" id="success-message" style="display: none">
+                                    <p>Formulário enviado com sucesso</p>
+                                </div>
+                                <div style="display: flex; justify-content: center;">
+                                    <div class="g-recaptcha" data-sitekey="6LcVj0oqAAAAAHVx83T9oyk-JUV2OQBGLzEwF0eS"></div>
                                 </div>
                                 <div class="button-div">
-                                    <button class="button-primary button-submit poppins-medium" type="submit" disabled>
+                                    <button class="button-primary button-submit poppins-medium" type="submit">
                                         Send
                                     </button>
                                 </div>
@@ -172,9 +179,9 @@
                         <i class="fa-brands fa-linkedin-in"></i>
                     </a>
                 </div>
-
             </div>
         </div>
     </footer>
+    <script src="scripts/form.js"></script>
 </body>
 </html>

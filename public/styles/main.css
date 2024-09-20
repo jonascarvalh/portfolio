@@ -386,6 +386,13 @@ form {
     text-align: start;
 }
 
+.success-message {
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+    border-radius: 6px;
+    padding: 0.5rem 5.15rem;
+}
+
 /* footer */
 footer {
     background-color: var(--color-secondary);
