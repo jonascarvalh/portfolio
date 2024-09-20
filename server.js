@@ -17,8 +17,6 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.post("/send-whatsapp", (req, res) => {
-    const { firstname, lastname, phone, email, message } = req.body;
-
     const whatsappMessage = (`*Novo contato*\nNome: ${firstname} ${lastname}\nE-mail: ${email}\nTelefone: ${phone}\nMensagem: ${message}`);
     console.log(whatsappMessage);
     const apiKey = process.env.API_KEY;
