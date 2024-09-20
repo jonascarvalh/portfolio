@@ -33,6 +33,7 @@ body {
 
 .subtitle {
     color: var(--subtitle);
+    margin: 0 0 1.5rem;
 }
 
 /* defaults */
@@ -159,7 +160,6 @@ body {
 .presentation {
     display: flex;
     font-size: 20px;
-    margin: 1.5rem 0;
     text-align: start;
     gap: var(--space-medium);
 }
@@ -196,102 +196,72 @@ body {
     text-align: center;
 }
 
-.project-show {
-    text-align: start;
-    border: none;
-    border-radius: 1rem;
-    color: var(--background-color);
-    background-color: var(--color-secondary);
-    height: 13rem;
-    width: 13rem;
-    font-size: 12px;
-}
-
-.project-show:hover {
-    border: none;
-    box-shadow: none;
-    transform: scale(1.10);
-    transition: all 200ms ease-in-out;
-}
-.image-container {
-    max-width: 100%;
-    min-width: 100%;
-    border-radius: 1rem 1rem 0 0;
-}
-
-.badge-img {
-    margin: 0.2rem 0;
-    width: 3rem;
-}
-
-.title-description {
-    margin: auto 1rem;
-}
-
-.projects {
+.projects-cards {
     display: flex;
-    justify-content: space-around;
-    margin: var(--space-short) 0;
+    justify-content: space-between;
 }
 
-.project-title {
+.card-project {
+    position: relative;
+    background-color: #2B2D31;
+    height: 350px;
+    width: 30%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden; /* Garante que o conteúdo fique dentro da div */
+}
+
+.project-1 {
+    background-image: url("../images/gym.jpg"); /* Verifique o caminho da imagem */
+    background-size: cover;
+    background-position: center;
+}
+
+.project-2 {
+    background-image: url("../images/recipes.jpg"); /* Verifique o caminho da imagem */
+    background-size: cover;
+    background-position: center;
+}
+
+.card-project::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(43, 45, 49, 0.9); /*Cor e opacidade da camada escura*/
+    z-index: 1; /* Coloca a camada acima da imagem */
+    border-radius: 10px;
+}
+
+/* .card-project .project-text {
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-align: center;
+    padding: 20px;
+} */
+
+.card-project .project-title {
+    position: relative;
     color: var(--background-color);
     font-size: 1.5rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    z-index: 2;
 }
 
-.project-button {
-    font-size: 16px;
+.card-project .project-description {
+    position: relative;
     color: var(--background-color);
-}
-
-.preview-button {
-    cursor: pointer;
-    border: 2px solid #3E70DD;
-    border-radius: 2rem;
-    display: inline-flex;
-    font-size: 1rem;
-    padding: 0.1rem 1rem;
-}
-
-.preview-button:hover {
-    background-color: var(--color-primary);
-    color: var(--background-color);
-}
-
-.preview-button a {
-    text-decoration: none;
-}
-
-.repository-button a {
-    text-decoration: none;
-}
-
-.repository-button {
-    display: inline-flex;
-    background-color: var(--color-primary);
-    border: 2px solid #3E70DD;
-    border-radius: 2rem;
-    cursor: pointer;
-    padding: 0.1rem 1rem;
-    font-size: 1rem;
-    text-decoration: none;
-}
-
-.project-area {
-    display: flex;
-    color: var(--background-color);
-    flex-direction: column;
-    align-items: center;
-    border-radius: 1.2rem;
-    background-color: var(--color-secondary);
-    padding: 3rem 5rem;
-    row-gap: 1.2rem;
-}
-
-.project-buttons {
-    display: flex;
-    flex-direction: row;
-    gap: 0.5rem;
+    font-size: 0.8rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    z-index: 2;
 }
 
 /* contact */
@@ -459,6 +429,7 @@ div.project-area {
         padding: 12rem 0;
     }
 }
+
 /* mobile */
 @media(max-width: 600px){
     .header-container h1 {
@@ -531,5 +502,15 @@ div.project-area {
         align-items: center;
         flex-direction: column;
         gap: 0.5rem;
+    }
+
+    .projects-cards {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .card-project {
+        width: 75%;
     }
 }
